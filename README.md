@@ -107,5 +107,6 @@ Draw the queue at each step in breadth-first traversal for the tree below:
 	> We can check that a tree is balanced by looking at where it has "missing children," room where nodes could have a child but don't. A tree is balanced if all of the missing children are at the very bottom level of the tree or just one level higher.
 
 
+1. How could you modify breadth-first search to pick out a group of nodes? What if you're selecting nodes based on some other characteristic instead of just the key?  
 
-1. How could you modify breadth-first search to pick out a group of nodes? What if you're selecting nodes based on some other characteristic instead of just the key?
+1. You run a website where users can assign creative names to colors. You store named colors as nodes in a self-balancing binary search tree, where the key of a node is the hex code of its color (for example: `#30af99`, `#c0ffee`). For a user's profile page, you'd like to show all the colors created by that user.  How could you modify the binary search tree and a breadth-first search algorithm to find all the colors created by a particular user?
