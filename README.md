@@ -63,7 +63,7 @@ Here's a rundown of breadth-first tree traversal:
 
 Draw the queue at each step in breadth-first traversal for the tree below:
 
-![](https://github.com/sf-wdi-31/trees/blob/master/images/labels.jpg)
+<img src="https://github.com/sf-wdi-31/trees/blob/master/images/labels.jpg" width="30%">
 
 <details><summary>click for answer</summary>
 ```
@@ -74,6 +74,20 @@ Draw the queue at each step in breadth-first traversal for the tree below:
 [C, E]      (dequeue A, enqueue its children)
 [E]         (dequeue C, enqueue its children)
 []          (dequeue E, enqueue its children)
+```
+
+
+You could also add the children starting at the "right" each time:
+
+
+```
+[D]
+[F, B]      (dequeue D, enqueue its children)
+[B, E]      (dequeue F, enqueue its children)
+[E, C, A]   (dequeue B, enqueue its children)
+[C, A]      (dequeue E, enqueue its children)
+[A]         (dequeue C, enqueue its children)
+[]          (dequeue A, enqueue its children)
 ```
 
 </details>
