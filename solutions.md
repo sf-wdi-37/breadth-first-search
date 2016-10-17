@@ -49,7 +49,8 @@
 	*You'd have to modify the algorithm to add the left and right children, as above. Then you'd want to keep track of the first depths at which you encounter a missing left or right child. To do so, you can have the queue store hashes/objects that include the node itself as well as its depth. When you find the first missing child, save its depth to a variable. As you move through the rest of the tree after the first missing child, you can check if the depth of another missing child is ever 2 greater than the saved minimum missing child depth. If it is, the tree is not balanced. If you finish going through the whole tree without figuring out it's not balanced, it must be balanced.*
 
 
-	`This pseudocode shows how to track depth as you search but does not fully solve the balance checking question.`
+  >This pseudocode shows how to track depth as you search but does not fully solve the balance checking question.
+  
 	```python
 	def breadth_first_search(tree, target_key):
 		# store node object *and depth* in queue
