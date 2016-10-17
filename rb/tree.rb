@@ -8,7 +8,7 @@ class Tree
   # reads the key of the tree's root
   attr_reader :key
 
-  ## 
+  ##
   # sets the key of the tree's root node
   # unless intended new key is nil
   # (to remove a node, set the entire node to nil)
@@ -25,7 +25,7 @@ class Tree
 
 
   ##
-  # Creates a new tree with the root node key specified by 
+  # Creates a new tree with the root node key specified by
   # the +key+ param as the @key for the instance
   def initialize(key)
     @key = key
@@ -33,9 +33,14 @@ class Tree
   end
 
   ##
-  # Searches through all nodes of the tree, spreading 
-  # outward from the root. Looks for any node with key equal
-  # to the +target_key+ param. Returns nil if no such node is found.
+  # Takes in a block that works on one node.
+  # Searches through all nodes of the tree, spreading
+  # outward from the root. Returns an array of all nodes
+  # for which the block yeilds true on that node.
+  ## example use:
+  # my_tree.breadth_first_search_all do |node|
+  #   node.key > 4
+  # end
   def breadth_first_search(target_key)
     nil
   end
@@ -57,13 +62,13 @@ b_node.children << e_node
 b_node.children << f_node
 e_node.children << g_node
 
-#          D 
+#          D
 #        /
 #     B  -- E -- G
 #   /   \
 # A        F
 #   \
-#     C 
+#     C
 
 
 
@@ -102,3 +107,34 @@ p h_result
 # ["G"]
 # nil
 
+puts "\n-- expect array with nodes E, F, G --"
+results = my_tree.breadth_first_search_all do |node|
+	node.key > 'D';
+end
+p results
+# ["A"]
+# ["B", "C"]
+# ["C", "D", "E", "F"]
+# ["D", "E", "F"]
+# ["E", "F"]
+# ["F", "G"]
+# ["G"]
+# [
+#    #<Tree:0x007fd1a5124ed0 @key="E", @children=[#<Tree:0x007fd1a5124d90 @key="G", @children=[]>]>,
+#    #<Tree:0x007fd1a5124e58 @key="F", @children=[]>,
+#   #<Tree:0x007fd1a5124d90 @key="G", @children=[]>
+# ]
+
+puts "\n-- expect empty array --"
+results = my_tree.breadth_first_search_all do |node|
+	node.key == "Bob"
+end
+p results
+# ["A"]
+# ["B", "C"]
+# ["C", "D", "E", "F"]
+# ["D", "E", "F"]
+# ["E", "F"]
+# ["F", "G"]
+# ["G"]
+# []

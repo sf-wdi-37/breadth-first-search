@@ -8,7 +8,7 @@ class Tree
   # reads the key of the tree's root
   attr_reader :key
 
-  ## 
+  ##
   # sets the key of the tree's root node
   # unless intended new key is nil
   # (to remove a node, set the entire node to nil)
@@ -25,7 +25,7 @@ class Tree
 
 
   ##
-  # Creates a new tree with the root node key specified by 
+  # Creates a new tree with the root node key specified by
   # the +key+ param as the @key for the instance
   def initialize(key)
     @key = key
@@ -33,12 +33,12 @@ class Tree
   end
 
   ##
-  # Searches through all nodes of the tree, spreading 
-  # outward from the root. Looks for any node with key equal
+  # Searches through all nodes of the tree, spreading
+  # outward from the root. Returns the first node with key equal
   # to the +target_key+ param.
   def breadth_first_search(target_key)
     queue = [self]
-    while !queue.empty?
+    until queue.empty?
       # print out key of each node in queue to help with debugging
       p queue.map { |node| node.key }
 
@@ -52,10 +52,38 @@ class Tree
       queue = queue + current.children
     end
 
-    # We finished the while loop (went through all nodes)
+    # We finished the until loop (went through all nodes)
     # without finding the node we wanted.
     # implicitly return nil
     nil
+  end
+
+  ##
+  # Takes in a block.
+  # Searches through all nodes of the tree, spreading
+  # outward from the root. Returns an array of all nodes
+  # for which the block yeilds true.
+  // Return all nodes for which the selectionFunction returns true.
+  def breadth_first_search_all
+    queue = [self]
+    results = []
+    until queue.empty?
+      # print out key of each node in queue to help with debugging
+      p queue.map { |node| node.key }
+
+      # remove the first node from the queue
+      current = queue.shift
+      # check if this node has the right key (and return if so)
+      if yield(current)
+        results << current
+      end
+      # add this node's children to the queue
+      queue = queue + current.children
+    end
+
+    # We finished the until loop (went through all nodes).
+    # Time to return the results!
+    results
   end
 
 end
@@ -75,13 +103,13 @@ b_node.children << e_node
 b_node.children << f_node
 e_node.children << g_node
 
-#          D 
+#          D
 #        /
 #     B  -- E -- G
 #   /   \
 # A        F
 #   \
-#     C 
+#     C
 
 puts "\n-- expect node E --"
 e_result = my_tree.breadth_first_search('E')
@@ -117,3 +145,35 @@ p h_result
 # ["F", "G"]
 # ["G"]
 # nil
+
+puts "\n-- expect array with nodes E, F, G --"
+results = my_tree.breadth_first_search_all do |node|
+	node.key > 'D';
+end
+p results
+# ["A"]
+# ["B", "C"]
+# ["C", "D", "E", "F"]
+# ["D", "E", "F"]
+# ["E", "F"]
+# ["F", "G"]
+# ["G"]
+# [
+#    #<Tree:0x007fd1a5124ed0 @key="E", @children=[#<Tree:0x007fd1a5124d90 @key="G", @children=[]>]>,
+#    #<Tree:0x007fd1a5124e58 @key="F", @children=[]>,
+#   #<Tree:0x007fd1a5124d90 @key="G", @children=[]>
+# ]
+
+puts "\n-- expect empty array --"
+results = my_tree.breadth_first_search_all do |node|
+	node.key == "Bob"
+end
+p results
+# ["A"]
+# ["B", "C"]
+# ["C", "D", "E", "F"]
+# ["D", "E", "F"]
+# ["E", "F"]
+# ["F", "G"]
+# ["G"]
+# []
