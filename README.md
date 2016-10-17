@@ -28,7 +28,7 @@ When we're storing data in trees, it's important to be comfortable using methods
 *Before this workshop, developers should already be able to:*
 
 - Explain tree terms: root, node, edge/branch, leaf, parent, child.
-- Draw a linked list.
+- Compare and contrast graphs, trees, binary trees, and binary search trees.
 
 
 ### Breadth-First Search
