@@ -44,7 +44,7 @@
 
 	*The breadth-first search algorithm would just need to add the left child and the right child to the queue instead of assuming that there's a `children` array.*
 
-1. Binary search trees can be faster than arrays at keeping data sorted when you insert and remove nodes, but only if the binary search tree is *balanced*, because a balanced tree has the minimum possible number of levels to store all its nodes. We can check that a tree is balanced by looking at where it has "missing children," room where nodes could have a child but don't. A tree is balanced if all of the missing children are at the very bottom level of the tree or just one level higher. How could you use breadth-first search to check whether a binary search tree is balanced?
+1. How could you use breadth-first search to check whether a binary search tree is balanced?
 
 	*You'd have to modify the algorithm to add the left and right children, as above. Then you'd want to keep track of the first depths at which you encounter a missing left or right child. To do so, you can have the queue store hashes/objects that include the node itself as well as its depth. When you find the first missing child, save its depth to a variable. As you move through the rest of the tree after the first missing child, you can check if the depth of another missing child is ever 2 greater than the saved minimum missing child depth. If it is, the tree is not balanced. If you finish going through the whole tree without figuring out it's not balanced, it must be balanced.*
 
@@ -73,3 +73,11 @@
 	*First of all, you'd want to output an array of nodes instead of just one node. We'll set up the output array to start out empty. Where we were returning a node before, we'd now just push it into the output array.  Where we were returning null or None or nil, we can return the (still empty) output array.*
 
 	*To pick out nodes based on some data other than the key, we'd need some way to test whether each node had that characteristic.  In JavaScript, we could pass our function a selectionFunction that returns true if the node should be selected and false if it shouldn't.  (To see this strategy coded up, check out the "breadth first search all" methods from solutions.)*
+	
+
+1. You run a website where users can assign creative names to colors. You store named colors as nodes in a self-balancing binary search tree, where the key of a node is the hex code of its color (for example: `#30af99`, `#c0ffee`). For a user's profile page, you'd like to show all the colors created by that user.  How could you modify the binary search tree and a breadth-first search algorithm to find all the colors created by a particular given user?
+	
+	*Modify the tree by storing user ids or names as part of each node's data.*
+	
+	
+	*For the algorithm, combine strategies from previous questions. Use the binary tree version (left and right children). Also, pick out a list of nodes based where the user information stored in the data matches the given user data.*
