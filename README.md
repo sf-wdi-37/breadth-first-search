@@ -21,6 +21,7 @@ When we're storing data in trees, it's important to be comfortable using methods
 *After this workshop, developers will be able to:*
 
 - Describe and draw breadth-first tree traversal.
+- Pseudocode breadth-first search.
 - Identify use cases for breadth-first search.
 
 ### Where should we be now?
@@ -29,6 +30,7 @@ When we're storing data in trees, it's important to be comfortable using methods
 
 - Explain tree terms: root, node, edge/branch, leaf, parent, child.
 - Compare and contrast graphs, trees, binary trees, and binary search trees.
+- Describe and draw a queue data structure. 
 
 
 ### Breadth-First Search
