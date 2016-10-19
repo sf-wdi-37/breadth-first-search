@@ -33,9 +33,9 @@ When we're storing data in trees, it's important to be comfortable using methods
 - Describe and draw a queue data structure. 
 
 
-### Breadth-First Search
+### Breadth-first Search
 
-Breadth-First search is one algorithm for searching through graphs, looking for one or more nodes that meet some search criteria.
+Breadth-first search is one algorithm for searching through graphs, looking for one or more nodes that meet some search criteria.
 
 In a binary search tree, we can find nodes based on keys quite quickly if we take advantage of the fact that each node's left subtree contains smaller keys and each node's right subtree contains larger keys.  
 
@@ -63,37 +63,37 @@ Here's a rundown of breadth-first tree traversal:
 
 #### Check for Understanding
 
-Draw the queue at each step in breadth-first traversal for the tree below:
+1. Draw the queue at each step in breadth-first traversal for the tree below:
 
-<img src="https://github.com/sf-wdi-31/trees/blob/master/images/labels.jpg" width="30%">
+  <img src="https://github.com/sf-wdi-31/trees/blob/master/images/labels.jpg" width="30%">
 
-<details><summary>click for answer</summary>
-```
-[D]
-[B, F]      (dequeue D, enqueue its children)
-[F, A, C]   (dequeue B, enqueue its children)
-[A, C, E]   (dequeue F, enqueue its children)
-[C, E]      (dequeue A, enqueue its children)
-[E]         (dequeue C, enqueue its children)
-[]          (dequeue E, enqueue its children)
-```
+  <details><summary>click for answer</summary>
 
+  ```
+	[D]
+	[B, F]      (dequeue D, enqueue its children)
+	[F, A, C]   (dequeue B, enqueue its children)
+	[A, C, E]   (dequeue F, enqueue its children)
+	[C, E]      (dequeue A, enqueue its children)
+	[E]         (dequeue C, enqueue its children)
+	[]          (dequeue E, enqueue its children)
+  ```
 
-You could also add the children starting at the "right" each time:
+  Or, you could add the children starting at the "right" each time:
 
+  ```
+	[D]
+	[F, B]      (dequeue D, enqueue its children)
+	[B, E]      (dequeue F, enqueue its children)
+	[E, C, A]   (dequeue B, enqueue its children)
+	[C, A]      (dequeue E, enqueue its children)
+	[A]         (dequeue C, enqueue its children)
+	[]          (dequeue A, enqueue its children)
+  ```
 
-```
-[D]
-[F, B]      (dequeue D, enqueue its children)
-[B, E]      (dequeue F, enqueue its children)
-[E, C, A]   (dequeue B, enqueue its children)
-[C, A]      (dequeue E, enqueue its children)
-[A]         (dequeue C, enqueue its children)
-[]          (dequeue A, enqueue its children)
-```
+  </details>
 
-</details>
-
+1. What is the Big-O runtime complexity of breadth-first traversal?
 
 ### Exercises: Breadth-first Tree Search
 
@@ -105,7 +105,6 @@ You could also add the children starting at the "right" each time:
 	* given a tree/node `my_tree`, get the root of the tree with `my_tree`
 	* given a tree/node, get the key of the node with `.key`
 	* given a tree/node, get the children of the node with `.children`
-
 
 
 1. Copy the starter code in either `tree.js` or `tree.rb`.  Code up your breadth-first search function in one of these files. There are informal "tests" at the bottom of each file that show what the output should be.  Run `node tree.js` or `ruby tree.rb` to see these tests work on your file.
