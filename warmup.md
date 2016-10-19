@@ -16,20 +16,19 @@ Adjacency lists store each node along with a list of other nodes it has edges go
   C: B
 ```
 
-Adjacency matrices store all the possible edges as an array of arrays (called a "matrix"). A `1` represents that there is an edge from , and a `0` means there's no edge there.
+Adjacency matrices store all the possible edges as an array of arrays (called a "matrix"). A `1` represents that there is an edge from the node in the "big" array to the node in the "little" array. A `0` means there's no edge there.  In the example below, the `1` at `graph[2][1]` means there's an edge from node C to node B. 
 
 ```
 [
   # A  B  C  
-	[ 1, 1, 1 ], # A
-	[ 0, 1, 0 ], # B
-	[ 0, 1, 1 ], # C
+	[ 0, 1, 1 ], # A
+	[ 0, 0, 0 ], # B
+	[ 0, 1, 0 ], # C
 ]
 ```
 
 
 
-Note that in the representations below, all nodes are assumed to have "edges" back to themselves. That's explicitly shown in the adjacency matrix but not in the adjacency lists.
 
 
 ### Do Now
@@ -149,16 +148,17 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 
 ### Adjacency Matrix
 
+
 <details><summary>A</summary>
 ```
 [
   # 1  2  3  4  5  6
-	[ 1, 1, 0, 0, 0, 0 ], # 1
-	[ 1, 1, 0, 0, 0, 0 ], # 2
-	[ 0, 1, 1, 0, 1, 0 ], # 3
-	[ 0, 0, 0, 1, 0, 0 ], # 4
-	[ 0, 0, 0, 1, 1, 1 ], # 5
-	[ 0, 0, 0, 0, 1, 1 ]  # 6
+	[ 0, 1, 0, 0, 0, 0 ], # 1
+	[ 1, 0, 0, 0, 0, 0 ], # 2
+	[ 0, 1, 0, 0, 1, 0 ], # 3
+	[ 0, 0, 0, 0, 0, 0 ], # 4
+	[ 0, 0, 0, 1, 0, 1 ], # 5
+	[ 0, 0, 0, 0, 1, 0 ]  # 6
 ]
 ```
 </details>
@@ -167,12 +167,12 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 ```
 [
   # 1  2  3  4  5  6
-	[ 1, 0, 0, 1, 0, 0 ], # 1
-	[ 0, 1, 1, 0, 0, 0 ], # 2
-	[ 0, 0, 1, 0, 0, 0 ], # 3
-	[ 0, 0, 0, 1, 0, 0 ], # 4
-	[ 1, 1, 0, 1, 1, 1 ], # 5
-	[ 0, 0, 0, 0, 0, 1 ]  # 6
+	[ 0, 0, 0, 1, 0, 0 ], # 1
+	[ 0, 0, 1, 0, 0, 0 ], # 2
+	[ 0, 0, 0, 0, 0, 0 ], # 3
+	[ 0, 0, 0, 0, 0, 0 ], # 4
+	[ 1, 1, 0, 1, 0, 1 ], # 5
+	[ 0, 0, 0, 0, 0, 0 ]  # 6
 ]
 ```
 </details>
@@ -181,12 +181,12 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 ```
 [
   # 1  2  3  4  5  6
-	[ 1, 0, 0, 0, 0, 1 ], # 1
-	[ 1, 1, 0, 0, 0, 0 ], # 2
-	[ 0, 0, 1, 0, 1, 0 ], # 3
-	[ 0, 0, 1, 1, 0, 0 ], # 4
-	[ 0, 1, 0, 0, 1, 0 ], # 5
-	[ 0, 0, 0, 1, 0, 1 ]  # 6
+	[ 0, 0, 0, 0, 0, 1 ], # 1
+	[ 1, 0, 0, 0, 0, 0 ], # 2
+	[ 0, 0, 0, 0, 1, 0 ], # 3
+	[ 0, 0, 1, 0, 0, 0 ], # 4
+	[ 0, 1, 0, 0, 0, 0 ], # 5
+	[ 0, 0, 0, 1, 0, 0 ]  # 6
 ]
 ```
 </details>
@@ -195,12 +195,12 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 ```
 [
   # 1  2  3  4  5  6
-	[ 1, 0, 0, 1, 0, 0 ], # 1
-	[ 1, 1, 0, 1, 0, 0 ], # 2
-	[ 0, 0, 1, 0, 0, 0 ], # 3
-	[ 0, 0, 1, 1, 0, 1 ], # 4
-	[ 0, 1, 0, 0, 1, 0 ], # 5
-	[ 1, 0, 1, 0, 0, 1 ]  # 6
+	[ 0, 0, 0, 1, 0, 0 ], # 1
+	[ 1, 0, 0, 1, 0, 0 ], # 2
+	[ 0, 0, 0, 0, 0, 0 ], # 3
+	[ 0, 0, 1, 0, 0, 1 ], # 4
+	[ 0, 1, 0, 0, 0, 0 ], # 5
+	[ 1, 0, 1, 0, 0, 0 ]  # 6
 ]
 ```
 </details>
@@ -209,12 +209,12 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 ```
 [
   # 1  2  3  4  5  6
-	[ 1, 0, 0, 0, 0, 0 ], # 1
-	[ 1, 1, 0, 0, 0, 0 ], # 2
-	[ 0, 1, 1, 0, 1, 0 ], # 3
-	[ 0, 0, 0, 1, 0, 0 ], # 4
-	[ 0, 0, 0, 1, 1, 1 ], # 5
-	[ 0, 0, 0, 0, 0, 1 ]  # 6
+	[ 0, 0, 0, 0, 0, 0 ], # 1
+	[ 1, 0, 0, 0, 0, 0 ], # 2
+	[ 0, 1, 0, 0, 1, 0 ], # 3
+	[ 0, 0, 0, 0, 0, 0 ], # 4
+	[ 0, 0, 0, 1, 0, 1 ], # 5
+	[ 0, 0, 0, 0, 0, 0 ]  # 6
 ]
 ```
 </details>
@@ -223,12 +223,12 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 ```
 [
   # 1  2  3  4  5  6
-	[ 1, 0, 0, 0, 0, 0 ], # 1
-	[ 0, 1, 1, 0, 0, 0 ], # 2
-	[ 0, 0, 1, 0, 0, 0 ], # 3
-	[ 0, 0, 0, 1, 0, 0 ], # 4
-	[ 1, 1, 0, 1, 1, 1 ], # 5
-	[ 0, 0, 0, 0, 0, 1 ]  # 6
+	[ 0, 0, 0, 0, 0, 0 ], # 1
+	[ 0, 0, 1, 0, 0, 0 ], # 2
+	[ 0, 0, 0, 0, 0, 0 ], # 3
+	[ 0, 0, 0, 0, 0, 0 ], # 4
+	[ 1, 1, 0, 1, 0, 1 ], # 5
+	[ 0, 0, 0, 0, 0, 0 ]  # 6
 ]
 ```
 </details>
@@ -237,12 +237,12 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 ```
 [
   # 1  2  3  4  5  6
-	[ 1, 0, 0, 0, 0, 1 ], # 1
-	[ 0, 1, 0, 0, 0, 0 ], # 2
-	[ 0, 0, 1, 0, 1, 0 ], # 3
-	[ 0, 0, 1, 1, 0, 0 ], # 4
-	[ 0, 1, 0, 0, 1, 0 ], # 5
-	[ 0, 0, 0, 1, 0, 1 ]  # 6
+	[ 0, 0, 0, 0, 0, 1 ], # 1
+	[ 0, 0, 0, 0, 0, 0 ], # 2
+	[ 0, 0, 0, 0, 1, 0 ], # 3
+	[ 0, 0, 1, 0, 0, 0 ], # 4
+	[ 0, 1, 0, 0, 0, 0 ], # 5
+	[ 0, 0, 0, 1, 0, 0 ]  # 6
 ]
 ```
 </details>
@@ -251,12 +251,12 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 ```
 [
   # 1  2  3  4  5  6
-	[ 1, 0, 0, 0, 0, 0 ], # 1
-	[ 0, 1, 0, 0, 0, 0 ], # 2
-	[ 1, 1, 1, 0, 0, 0 ], # 3
-	[ 0, 0, 1, 1, 0, 1 ], # 4
-	[ 0, 0, 0, 0, 1, 0 ], # 5
-	[ 0, 0, 0, 0, 1, 1 ]  # 6
+	[ 0, 0, 0, 0, 0, 0 ], # 1
+	[ 0, 0, 0, 0, 0, 0 ], # 2
+	[ 1, 1, 0, 0, 0, 0 ], # 3
+	[ 0, 0, 1, 0, 0, 1 ], # 4
+	[ 0, 0, 0, 0, 0, 0 ], # 5
+	[ 0, 0, 0, 0, 1, 0 ]  # 6
 ]
 ```
 </details>
