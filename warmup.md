@@ -20,7 +20,7 @@ Adjacency matrices store all the possible edges as an array of arrays (called a 
 
 ```
 [
-  # A  B  C  
+  	# A  B  C  
 	[ 1, 1, 1 ], # A
 	[ 0, 1, 0 ], # B
 	[ 0, 1, 1 ], # C
@@ -152,7 +152,7 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 <details><summary>A</summary>
 ```
 [
-  # 1  2  3  4  5  6
+ 	 # 1  2  3  4  5  6
 	[ 1, 1, 0, 0, 0, 0 ], # 1
 	[ 1, 1, 0, 0, 0, 0 ], # 2
 	[ 0, 1, 1, 0, 1, 0 ], # 3
@@ -166,7 +166,7 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 <details><summary>B</summary>
 ```
 [
-  # 1  2  3  4  5  6
+	# 1  2  3  4  5  6
 	[ 1, 0, 0, 1, 0, 0 ], # 1
 	[ 0, 1, 1, 0, 0, 0 ], # 2
 	[ 0, 0, 1, 0, 0, 0 ], # 3
@@ -174,13 +174,13 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 	[ 1, 1, 0, 1, 1, 1 ], # 5
 	[ 0, 0, 0, 0, 0, 1 ]  # 6
 ]
-```
+```
 </details>
 
 <details><summary>C</summary>
 ```
 [
-  # 1  2  3  4  5  6
+	# 1  2  3  4  5  6
 	[ 1, 0, 0, 0, 0, 1 ], # 1
 	[ 1, 1, 0, 0, 0, 0 ], # 2
 	[ 0, 0, 1, 0, 1, 0 ], # 3
@@ -188,55 +188,56 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 	[ 0, 1, 0, 0, 1, 0 ], # 5
 	[ 0, 0, 0, 1, 0, 1 ]  # 6
 ]
-```
+```
 </details>
 
 <details><summary>D</summary>
 ```
 [
-  # 1  2  3  4  5  6
+	# 1  2  3  4  5  6
 	[ 1, 0, 0, 1, 0, 0 ], # 1
 	[ 1, 1, 0, 1, 0, 0 ], # 2
 	[ 0, 0, 1, 0, 0, 0 ], # 3
 	[ 0, 0, 1, 1, 0, 1 ], # 4
 	[ 0, 1, 0, 0, 1, 0 ], # 5
 	[ 1, 0, 1, 0, 0, 1 ]  # 6
-]
+]
+
 ```
 </details>
 
 <details><summary>E</summary>
 ```
 [
-  # 1  2  3  4  5  6
+	# 1  2  3  4  5  6
 	[ 1, 0, 0, 0, 0, 0 ], # 1
 	[ 1, 1, 0, 0, 0, 0 ], # 2
 	[ 0, 1, 1, 0, 1, 0 ], # 3
 	[ 0, 0, 0, 1, 0, 0 ], # 4
 	[ 0, 0, 0, 1, 1, 1 ], # 5
 	[ 0, 0, 0, 0, 0, 1 ]  # 6
-]
+]
 ```
 </details>
 
 <details><summary>F</summary>
 ```
 [
-  # 1  2  3  4  5  6
+	# 1  2  3  4  5  6
 	[ 1, 0, 0, 0, 0, 0 ], # 1
 	[ 0, 1, 1, 0, 0, 0 ], # 2
 	[ 0, 0, 1, 0, 0, 0 ], # 3
 	[ 0, 0, 0, 1, 0, 0 ], # 4
 	[ 1, 1, 0, 1, 1, 1 ], # 5
 	[ 0, 0, 0, 0, 0, 1 ]  # 6
-]
+]
 ```
 </details>
 
 <details><summary>G</summary>
 ```
 [
-  # 1  2  3  4  5  6
+	# 1  2  3  4  5  6
 	[ 1, 0, 0, 0, 0, 1 ], # 1
 	[ 0, 1, 0, 0, 0, 0 ], # 2
 	[ 0, 0, 1, 0, 1, 0 ], # 3
@@ -250,7 +251,7 @@ Note that in the representations below, all nodes are assumed to have "edges" ba
 <details><summary>H</summary>
 ```
 [
-  # 1  2  3  4  5  6
+	# 1  2  3  4  5  6
 	[ 1, 0, 0, 0, 0, 0 ], # 1
 	[ 0, 1, 0, 0, 0, 0 ], # 2
 	[ 1, 1, 1, 0, 0, 0 ], # 3
