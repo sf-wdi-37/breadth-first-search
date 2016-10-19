@@ -16,7 +16,7 @@ Adjacency lists store each node along with a list of other nodes it has edges go
   C: B
 ```
 
-Adjacency matrices store all the possible edges as an array of arrays (called a "matrix"). A `1` represents that there is an edge from the node in the "big" array to the node in the "little" array. A `0` means there's no edge there.  In the example below, the `1` at `graph[2][1]` means there's an edge from node C to node B. 
+Adjacency matrices store all the possible edges as an array of arrays (called a "matrix"). A `1` represents that there is an edge from the node in the "big" array to the node in the "little" array. A `0` means there's no edge there.  In the example below, the `1` at `graph[2][1]` means there's an edge from node C to node B.
 
 ```
 [
@@ -174,7 +174,7 @@ Adjacency matrices store all the possible edges as an array of arrays (called a 
 	[ 1, 1, 0, 1, 0, 1 ], # 5
 	[ 0, 0, 0, 0, 0, 0 ]  # 6
 ]
-```
+```
 </details>
 
 <details><summary>C</summary>
@@ -188,7 +188,7 @@ Adjacency matrices store all the possible edges as an array of arrays (called a 
 	[ 0, 1, 0, 0, 0, 0 ], # 5
 	[ 0, 0, 0, 1, 0, 0 ]  # 6
 ]
-```
+```
 </details>
 
 <details><summary>D</summary>
@@ -201,7 +201,7 @@ Adjacency matrices store all the possible edges as an array of arrays (called a 
 	[ 0, 0, 1, 0, 0, 1 ], # 4
 	[ 0, 1, 0, 0, 0, 0 ], # 5
 	[ 1, 0, 1, 0, 0, 0 ]  # 6
-]
+]
 ```
 </details>
 
@@ -215,7 +215,7 @@ Adjacency matrices store all the possible edges as an array of arrays (called a 
 	[ 0, 0, 0, 0, 0, 0 ], # 4
 	[ 0, 0, 0, 1, 0, 1 ], # 5
 	[ 0, 0, 0, 0, 0, 0 ]  # 6
-]
+]
 ```
 </details>
 
@@ -229,7 +229,7 @@ Adjacency matrices store all the possible edges as an array of arrays (called a 
 	[ 0, 0, 0, 0, 0, 0 ], # 4
 	[ 1, 1, 0, 1, 0, 1 ], # 5
 	[ 0, 0, 0, 0, 0, 0 ]  # 6
-]
+]
 ```
 </details>
 
