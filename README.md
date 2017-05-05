@@ -91,9 +91,11 @@ Here's a rundown of breadth-first tree traversal:
 	[]          (dequeue A, enqueue its children)
   ```
 
+What is the Big-O runtime complexity of breadth-first traversal?
+
   </details>
 
-1. What is the Big-O runtime complexity of breadth-first traversal?
+
 
 ### Exercises: Breadth-first Tree Search
 
