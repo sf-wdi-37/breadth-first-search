@@ -119,7 +119,7 @@ Here's a rundown of breadth-first tree traversal:
 
   >Binary search trees can be faster than arrays at keeping data sorted when you insert and remove nodes, but only if the binary search tree is *balanced*, because a balanced tree has the minimum possible number of levels to store all its nodes.
 
-	> We can check that a tree is balanced by looking at where it has "missing children," room where nodes could have a child but don't. A tree is balanced if all of the missing children are at the very bottom level of the tree or just one level higher.
+*We can check that a tree is balanced by looking at where it has "missing children," room where nodes could have a child but don't. A tree is balanced if all of the missing children are at the very bottom level of the tree or just one level higher.*
 
 
 1. How could you modify breadth-first search to pick out a group of nodes? What if you're selecting nodes based on some other characteristic instead of just the key?  
