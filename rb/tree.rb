@@ -32,6 +32,17 @@ class Tree
     @children = []
   end
 
+	
+  ##
+  #  Searches through all nodes of the tree, spreading
+  #  outward from the root. Returns true
+  #  if the target key is in the tree.
+  ## example use:	
+  # my_tree.breadth_first_search('E')
+  def breadth_first_search(target_key)
+    nil
+  end
+	
   ##
   # Takes in a block that works on one node.
   # Searches through all nodes of the tree, spreading
@@ -41,7 +52,8 @@ class Tree
   # my_tree.breadth_first_search_all do |node|
   #   node.key > 4
   # end
-  def breadth_first_search(target_key)
+  def breadth_first_search_all(&block)
+    block.call
     nil
   end
 
